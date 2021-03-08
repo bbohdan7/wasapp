@@ -2,7 +2,7 @@
 
 Do this simple steps:
 
-* Loggin into Jenkins Web App
+* Login into Jenkins Web App
 * Go to Manage "Jenkins"->"Credentials"->"Jenkins"->"Global Credentials" click "Add Credential"
 * Choose kind "Kubernetes configuration"
 * Enter ID kubeconfig
@@ -13,3 +13,17 @@ Do this simple steps:
 * Inside pipeline script use these script command inside Deploy stage `kubernetesDeploy(configs: "nginx.yaml", kubeconfigId: "kubeconfig")`
 * Notice that kubeconfig must be the name you've assigned to the credential of Jenkins and nginx.yaml is the file within the root of your GitHub repository given inside Jenkins Pipeline script.
 * Enjoy!
+
+## P.S. If you want your pipeline to work with GitHub Webhooks you should use this block of Pipeline script
+`stage('Checkout SCM') {
+            steps {
+                checkout([
+                 $class: 'GitSCM',
+                 branches: [[name: 'master']],
+                 userRemoteConfigs: [[
+                    url: 'https://github.com/zbogdan7/wasapp',
+                    credentialsId: '',
+                 ]]
+                ])
+            }
+}`
