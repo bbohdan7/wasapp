@@ -10,7 +10,6 @@
     <packaging>war</packaging>
     
     <name>wasapp</name>
- 
 	
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
