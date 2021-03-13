@@ -8,7 +8,7 @@
     <artifactId>wasapp</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
-    <!--adsgbvadsasdgadggdasgb -->
+    <!-- Production name -->
     <name>wasapp</name>
 	
     <properties>
