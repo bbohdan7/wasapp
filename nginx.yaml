@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-app
-  namespace: jenkins
+  namespace: bogdan
   labels:
     app: nginx-app
 spec:
